@@ -1,0 +1,112 @@
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      [class*="col-"] {
+        width: 100%;
+      }
+    }
+            .container{
+                height: 100%;
+                width: 100%;
+            }
+            .heading{
+                margin-top: 40px;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-family: inherit;
+                font-size: 60px;    
+            }
+            .courses-heading{
+                margin-top: 40px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-family: inherit;
+                font-size: 40px;    
+            }
+            .courses{
+                font-size:20px;
+                color: rgb(214, 39, 68);
+                font-family: inherit;
+                font-weight: 800;
+            }
+            .courses-bg{
+                padding:3px;
+                color: rgb(172, 73, 89);
+                border-radius: 25px;
+                background-color: pink;
+            }
+            .btn{
+                /* background-image: linear-gradient(to right,rgb(21, 88, 149), rgb(10, 119, 184)); */
+                background-image: linear-gradient(to right,rgb(123, 123, 228), rgb(17, 17, 252));
+                font-family: Muli,sans-serif;
+                display: inline-block;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 23px;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 18px 10px;
+                min-width: 320px;
+                border-radius: 6px;
+                color:#fff;
+                cursor: pointer;
+                outline: none;
+                margin:5px;
+            }
+            .next-heading{
+                font-weight: 400;
+                font-family: 'Aldrich';
+            }
+            .card{
+                height:100%;
+                padding-top: 20px;
+                border-radius:1px;
+            }
+            .card:hover{
+                height:100%;
+                padding-top: 20px;
+                border-radius:1px;
+                box-shadow: 8px 8px 15px rgba(3, 19, 92, 0.4);
+            }
+            .card-body{
+                color: floralwhite;
+                font-family: 'Aldrich';font-size: 22px;
+            }
+.courseImage1{
+  height:100%;
+  width:100%;
+}
+  .courseImage2{
+    height:100%;
+    width:100%;
+  }
+@media screen and (max-width: 600px) {
+    .mainButtonLargeScreen{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .mainButtonSmallScreen {
+        display:none;
+    }
+}
+.joinus{
+    font-size:20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+}

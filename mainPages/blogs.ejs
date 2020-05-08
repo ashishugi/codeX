@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blogs</title>
+    <style>
+        .card{
+            background-image: linear-gradient(to right,rgb(21, 88, 149), rgb(10, 119, 184));
+            color: rgb(255, 255, 255);
+            margin:5px;
+            border-radius: 25px;;
+        }
+        .card-title{
+            font-family: 'Aldrich';font-size: 22px;
+        }
+        .card:hover{
+        background-image: linear-gradient(to right,rgb(21, 88, 149), rgb(10, 119, 184));
+        color: rgb(240, 240, 234);
+        box-shadow: 8px 8px 15px rgba(3, 19, 92, 0.4);
+       }
+       .container{
+         height: 100%;
+       }
+    </style>
+</head>
+<body>
+    <%- include('navMain') %>
+    <div class="container">
+        <div class="row">
+            <% if(records.length > 0){
+                records.forEach(function(row){%>
+                   
+                        <div class="col-sm-12 col-md-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title"><strong><%= row.title  %></strong></h5>
+                               <br>
+                               <br>
+                              <%if(loginuser!=''){%>
+                                <a href="/blogs/del/<%= row._id %>" style="float: right"><i class="fa fa-trash-o" style="font-size:24px"></i></a>
+                              <%}%>
+                              <a href="/blogs/<%=row.path%>" class="btn btn-success">Read</a>
+                            </div>
+                          </div>
+                        </div>
+                   
+                    <br>
+            <%})}%>
+        </div>
+    </div>
+
+   
+                                    
+    
+    <%- include('footer') %>
+</body>
+</html>

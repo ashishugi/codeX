@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Problems</title>
+    
+</head>
+<body>
+    <%- include('navMain') %>
+   
+    <div class="container">
+            <h2 style="color:rgb(185, 159, 12) ; text-align:center;"><strong><%= tittle %></strong></h2> 
+            <br/>
+       <tr class="row">
+           <table class="table table-hover table-striped">
+               <thead class="thead-dark">
+                   <tr>
+                       <th> # </th>
+                       <th> Problems </th>
+                       <th>  </th>
+                   </tr>
+               </thead>
+               <tbody>
+               <% var count=1 %>
+               <% record.forEach(function(data){ %>
+                    <tr>
+                        <td><%= count %></td>
+                        <td><a href="/problems/<%=data.path%>"/><%= data.heading %> </a></td>
+                        <%if(loginuser!=''){%>
+                            <td><a href="/problems/del/<%=data._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i> </a></td>
+                        <%}%>
+                        </tr>
+
+    
+               <% count+=1 }); %>
+            </tbody>
+
+           </table>
+       </div>
+    </div>
+    <%- include('footer') %>
+   
+   
+</body>
+</html>
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navMain') %>
+    <% if(msg!=''){%>
+        <%= msg %>
+    <%}%>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ">
+                <h3 style="font-family: cursive; color:black; text-align:center;">Login</h3>
+                <form class="form" method="POST" action="login">
+                    <label >Username</label>
+                    <input class="form-control" type="text" name="username" required>
+                    <br>
+                    <label  >Password</label>
+                    <input type="password" class="form-control" name="password" required>
+                    <br>
+                    <button type="submit" class="btn btn-success">Log In</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <%- include('footer') %>
+</body>
+</html>

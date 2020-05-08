@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=record.title%></title>
+    <style>
+        .mains{
+            font-family: 'Autour One';font-size: 40px;
+        }
+        .author{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .heading{
+            font-size: 32px;
+        }
+        .content{
+            /* font-family: 'Sofia';font-size: 22px; */
+            font-family: 'Barlow';font-size: 22px;
+        }
+       .card{
+        /* background-image: linear-gradient( to right,#9e2c1d,#060766); */
+        /* background-image: linear-gradient(to right,rgb(21, 88, 149), rgb(10, 119, 184)); */
+        background-image: linear-gradient( to right,#f9af2e,#f9af2e);
+        color: rgb(240, 240, 234);
+       }
+       .card:hover{
+        background-image: linear-gradient( to right,#f9af2e,#f9af2e);
+        /* background-image: linear-gradient(to right,rgb(21, 88, 149), rgb(10, 119, 184)); */
+        color: rgb(240, 240, 234);
+        box-shadow: 8px 8px 15px rgba(3, 19, 92, 0.4);
+       }
+       .card-title{
+            font-family: 'Aldrich';font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('navMain') %>
+   <div class="container">
+       <div class="row">
+           <div class="col-sm-12 col-md-12">
+            <h1 class="text-center mains"><%= record.title%></h1>
+            <hr>
+           </div>
+       </div>
+   </div>
+   <div class="container" >
+        <div class="row" >
+                <div class="col-sm-12 col-md-4" >
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title"><strong>Author : <%= record.author %></strong></h6>
+                                <small style=""><%=record.date %></small>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+   </div>
+   <br>
+   <br>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12 heading" style="border-bottom: 2px solid rgb(202, 134, 7);">
+               <strong>#</strong>&nbsp;<%= record.heading%>
+           </div>
+       </div>
+   </div>
+   <br>
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12 content">
+            <%- record.content %>
+        </div>
+    </div>
+</div>
+
+    
+    <%- include('footer') %>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+ 
+    <title><%= record.heading %></title>
+    <style>
+                pre .str, code .str { color: #65B042; } /* string  - green */
+                pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+                pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+                pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+                pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+                pre .pun, code .pun { color: #fff; } /* punctuation - white */
+                pre .pln, code .pln { color: #fff; } /* plaintext - white */
+                pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+                pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+                pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+                pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+                
+                pre.prettyprint, code.prettyprint {
+                	background-color: #000;
+                	border-radius: 8px;
+                }
+                
+                pre.prettyprint {
+                	width: 95%;
+                	margin: 1em auto;
+                	padding: 1em;
+                	white-space: pre-wrap;
+                }
+                
+                
+                /* Specify class=linenums on a pre to get line numbering */
+                ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+                li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+                /* Alternate shading for lines */
+                li.L1,li.L3,li.L5,li.L7,li.L9 { }
+                
+                @media print {
+                  pre .str, code .str { color: #060; }
+                  pre .kwd, code .kwd { color: #006; font-weight: bold; }
+                  pre .com, code .com { color: #600; font-style: italic; }
+                  pre .typ, code .typ { color: #404; font-weight: bold; }
+                  pre .lit, code .lit { color: #044; }
+                  pre .pun, code .pun { color: #440; }
+                  pre .pln, code .pln { color: #000; }
+                  pre .tag, code .tag { color: #006; font-weight: bold; }
+                  pre .atn, code .atn { color: #404; }
+                  pre .atv, code .atv { color: #060; }
+                }
+    </style>
+</head>
+<body>
+        <%- include('navMain') %> <!-- the correct way to include one page into another page-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+                <h2 style="color: rgb(185, 159, 12)"><strong> <%- record.heading %> </strong></h2>
+                <hr>
+        </div>
+    </div>
+    <div class="row">
+       <div class="col-md-12">
+            <small><strong sty>DESCRIPTION</strong></small>
+       </div>
+    </div>
+    <br/>
+    <div class="row">
+            <div class="col-sm-12 col-md-12">
+                    <p style="font-family: 'Lucida Sans';"> <%- record.description %></p>
+                    <br/>
+            </div>
+    </div>
+
+    <div class="row">
+            <div class="col-sm-12 col-md-6">
+                    <h5 ><strong>Input</strong></h5>
+                    <br/>
+                    <p >
+                            <%- record.input %>
+                    </p>
+            </div>
+    </div>
+    <br/>
+
+    <div class="row">
+            <div class="col-sm-12 col-md-6">
+                    <h5 ><strong>Output</strong></h5>
+                    <br/>
+                    <p >
+                            <%- record.output %>
+                    </p>
+            </div>
+    </div>
+    <br/>
+
+    <div class="row">
+            <div class="col-sm-12 col-md-6">
+                    <h5 ><strong>Sample Input</strong></h5>
+                    <br/>
+                    <p >
+                            <%- record.sampleinput %>
+                    </p>
+            </div>
+    </div>
+    <br/>
+    <div class="row">
+            <div class="col-sm-12 col-md-6">
+                    <h5 ><strong>Sample Output</strong></h5>
+                    <br/>
+                    <p >
+                        <%- record.sampleoutput %>
+                    </p>
+            </div>
+    </div>
+
+    <br/>
+    <div class="row" >
+            <div class="col-sm-12 col-md-8" style="align-content: center;">
+                    <h5 style="color: indigo;"><strong>Code</strong></h5>
+                    <br/>
+
+                  <pre class="prettyprint"  style="border-radius: 20px; color: white;">
+                        <div >
+                                 <%= record.code %>
+                                 <br/>
+                                 <br/>
+             
+                        </div>
+                  </pre>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                        <h5 style="color: indigo;"><strong>Explanation</strong></h5>
+                        <br/>
+                    <%= record.explanation %>
+                    <br/>
+                    <br/>
+            </div> 
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('footer') %>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
